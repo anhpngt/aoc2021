@@ -30,3 +30,25 @@ export function solveDay2_1() {
 
     console.log(`final position: ${pos}, depth: ${depth} => ${pos * depth}`);
 }
+
+export function solveDay2_2() {
+    let pos = 0;
+    let depth = 0;
+    let aim = 0;
+    for (const [action, value] of lines) {
+        switch (action) {
+            case 'down':
+                aim += value
+                break
+            case 'up':
+                aim -= value
+                break
+            case 'forward':
+                pos += value
+                depth += aim * value
+                break
+        }
+    }
+
+    console.log(`final position: ${pos}, depth: ${depth} => ${pos * depth}`);
+}
